@@ -48,7 +48,7 @@ console.log(Array.isArray("hitesh")); //false
 console.log(Array.from("hitesh")); // [ 'h', 'i', 't', 'e', 's', 'h' ] convert into the array
 
 console.log(Array.from({ name: "manvi" })); //  []  empty array if not bale to convert  =-----------make array using keys
-
+ 
 // ------------convert into arary
 
 let score1 = 1000;
