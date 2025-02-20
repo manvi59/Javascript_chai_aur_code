@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+  const div= document.createElement("div")
+  console.log(div)  // <div></div>
+
+  // add the property inside the div
+
+  div.className="main"
+  div.id=Math.random()*10
+
+  // <div class="main" id="3.073069608919632"></div>
+  div.setAttribute("title" ,"generated title")
+//   <div class="main" id="9.614533733689646" title="generated title"></div>
+
+div.style.backgroundColor="green"
+div.style.padding="12px"
+// <div class="main" id="4.260070439052419" title="generated title" style="background-color: green; padding: 12px;"></div>
+
+// <div class="main" id="4.641469366279194" title="generated title" style="background-color: green; padding: 12px;">Chai aur code</div>
+
+div.innerHTML="Chai aur code"  // override the value
+
+// crate the text node
+const addText=document.createTextNode("chai aur code")
+div.appendChild(addText)
+
+// <div class="main" id="5.373706424617999" title="generated title" style="background-color: green; padding: 12px;">Chai aur codechai aur code</div>
+
+
+// attched into the document to show in the page 
+document.body.appendChild(div)
+
+
+</script>
+</html>

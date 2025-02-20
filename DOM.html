@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:black;color:azure;">
+    <h1 id="one"> hii i am h1 tag</h1>
+    <h1 id="one"> hii i am h2 tag</h1>
+    <p> this is paragraph <span> hii</span></p>
+
+    <input type="password" />
+
+    <ul>
+        <li class="listItem">one</li>
+        <li class="listItem"> two</li>
+        <li class="listItem">three</li>
+    </ul>
+     
+</body>
+</html>
+
+
+<!--
+
+document.getElementnbyId("one")
+one.style.backgroundColor="pink"
+one.style.padding="10px"
+
+one.innerHTML // support html text also
+
+one.textContext  // only support content
+
+
+document.querySelector('h1')   //only select the first h1
+document.querySelector('#id')
+document.querySelector('.class')
+document.querySelector('input')
+
+document.querySelector('input[type="password"]')  
+ //<input type="password">
+
+ document.querySelector('p:first-child')
+ const myul=document.querySelector("ul")
+ const turngreen =myul.querySelector('li') // fisrt item / list
+ turngreen.style.backgrounColor="green"
+
+ turngreen.innerText="change one"
+
+
+ const tempList=document.querySelectorAll("li")  // provide all item /list which is NodeList
+
+ // ans---NodeList(3) [li, li, li]   like a array but not a array
+
+ tempList.style.color='green'  // can't do this 
+
+ tempList[0].style.color="green"  // can do
+
+
+ const htList =document.querySelectorAll("h1")
+ // NodeList(2) [h1#one, h1#one]  can use forEach function in NodeList
+
+ // htList.forEach((item)=> console.log(item))  // can do this
+  
+
+ tempClassLsit=document.getElementsByClassName("listItem")
+
+ // HTMLCollection(3) [li.listItem, li.listItem, li.listItem]  // can't use forEach , map not like an array so that we need to convert into array
+
+Array.from(temClassList)  // will converted into array . we can use every method in that  inside the prottotype we can see
+
+
+
+-->

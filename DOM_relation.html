@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent"> 
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+
+    </div>
+    
+</body>
+
+<script>
+    const parent=document.querySelector(".parent");
+    console.log(parent)
+    // parent to child move
+    console.log(parent.children)  //HTMLCollection(4) [div.day, div.day, div.day, div.day]0: div.day1: div.day2: div.day3: div.daylength: 4[[Prototype]]: HTMLCollection
+
+    console.log(parent.children[1].innerHTML)  // Tuesday
+
+    for(let i=0;i<parent.children.length;i++){
+        console.log(parent.children[i].innerHTML)
+    } // Monday Tuesday  wednesday thrusday
+
+
+    console.log(parent.firstElementChild)  // Monady div
+    console.log(parent.lastElementChild) // thrusady div
+
+
+    // ===============child to parent
+
+    const dayOne=document.querySelector(".day")  // first list element
+    console.log(dayOne.parentElement)  // parent Element 
+    console.log(dayOne.nextElementSibling)  // Tuesday Elemnt
+
+    console.log("Nodes" , parent.childNodes)  
+    
+// Nodes
+//  NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+    
+</script>
+</html>

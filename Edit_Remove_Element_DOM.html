@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+
+    </ul>
+    
+</body>
+
+<script>
+    function addLanguage(langName){
+  const li= document.createElement("li")
+  li.innerHTML=langName;
+  document.querySelector(".language").appendChild(li);
+}
+addLanguage("python")
+addLanguage("C++")
+// it will append python and c++ list elements  in the ul 
+
+// optimize approach to add language list element
+function addoptiLanguage(langName){
+    const li=document.createElement("li")
+li.appendChild(document.createTextNode(langName))
+document.querySelector('.language').appendChild(li)
+}
+addoptiLanguage("golang") // golang is added as a list element in ul
+
+
+
+// -----------------------edit the value
+const secondLang=document.querySelector("li:nth-child(2)");
+secondLang.innerHTML="Mojo" // python is changes with mojo not optimized approach because of innerHTML traversal
+
+const newli=document.createElement("li")
+newli.textContent="MooooooooJooooooooo";
+secondLang.replaceWith(newli) // mojo is replace with moooooooooojoooooooooooooo
+
+
+//-------------------remove the element
+
+const lastLang=document.querySelector("li:last-child")
+lastLang.remove()  // it will remove the last Element
+
+</script>
+ 
+</html>
