@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- preventDefault [to stop the default bechaviour of The UI element we use prevent Default] -->
+     <a href="https://www.google.com" id="linki">my work is to click and open  link in new tab</a>
+
+     <!--  default prevent is used when we are submitting the form then we don't want to submit after click 
+      we want first check the validation part then form should submit on the double clike or afterwords  
+     -->
+
+     <br> <br>
+
+     <form action="" id="iamform">
+        <input type="text"> <br>
+        <button type="submit">submit</button> 
+     </form>
+</body>
+<script>
+    const anki=document.getElementById("linki");
+    anki.addEventListener("click", function(e){
+        console.log("hey clicking")
+
+        e.preventDefault();
+        // will stop the default behaviour of anker tag and will not open link
+
+        // ----------------form default prevent
+        const formi= document.getElementById("iamform");
+
+        formi.addEventListener("submit" , (e)=>{
+            console.log("I am submitting the form after clicking on submit button")
+            e.preventDefault();
+
+        }
+    )
+        
+    })
+</script>
+</html>

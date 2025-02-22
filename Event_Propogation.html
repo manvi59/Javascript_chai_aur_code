@@ -1,0 +1,113 @@
+<!--  Event Propogation during addEventListner 
+  1. event bubling -- small to  big [ child to parent ] .
+  2. event capurature , event tritlling -- parent to child 
+  3.  stopPropogation -- to flow of propogation 
+
+
+  div.addEventListner("click" , (e)=>{
+  // e is propagation function
+  } , event capauture flag)
+-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <style>
+    div{
+        padding: 50px;
+        border: 2px solid black;
+        cursor:pointer;
+    }
+
+ </style>
+ <body>
+
+    <div id="grandParent">
+        grand
+        <div id="parent">
+            parent
+            <div id="child">
+                child
+            </div>
+        </div>
+    </div>
+    
+ </body>
+
+
+ <script>
+
+    const grand=document.getElementById("grandParent");
+    const parent=document.getElementById("parent");
+    const child=document.getElementById("child");
+
+    // // -------------------this is the Example of Event Bubling-------------
+    // here is event capture flag is false by default
+
+
+    // grand.addEventListener("click" , ()=>{
+    //     console.log("Grand Parent")
+    // }) // grand Parent
+    // parent.addEventListener("click" , ()=>{
+    //     console.log("Parent")
+    // }) // parent grand Parent
+    // child.addEventListener("click" , ()=>{
+    //     console.log("child")
+    // })   // when we click on child ,---------- child parent grand Parent
+
+
+    // // -------------------------- this is a Event Bubbling
+
+
+    // grand.addEventListener("click" , ()=>{
+    //     console.log("Grand Parent")
+    // }, false) // grand Parent
+    // parent.addEventListener("click" , ()=>{
+    //     console.log("Parent")
+    // }, false) // parent grand Parent
+    // child.addEventListener("click" , ()=>{
+    //     console.log("child")
+    // }, false)   // when we click on the child ,-------  child parent grand Parent
+
+
+     // -------------------------- this is a example of Event Capturing
+
+
+    //  grand.addEventListener("click" , ()=>{
+    //     console.log("Grand Parent")
+    // }, true) // grand Parent
+    // parent.addEventListener("click" , ()=>{
+    //     console.log("Parent")
+    // }, true) // grand Parent parent
+    // child.addEventListener("click" , ()=>{
+    //     console.log("child")
+    // }, true)   // when we click on the child ----------- grand Parent parent child
+
+
+
+    // ----------------------Stop propogation -------stopping the flow of the bubbling and capturing
+
+    
+     grand.addEventListener("click" , (e)=>{
+        console.log("Grand Parent")
+    },false)  
+    parent.addEventListener("click" , (e)=>{
+        console.log("Parent")
+
+        e.stopPropagation();
+
+    }, false)  
+    child.addEventListener("click" , (e)=>{
+        console.log("child")
+    }, false)     // when we click on child then following will be print
+    // child 
+    // parent then will stop the flow of the propogation because we have use e.stopPropagtion() function
+
+
+
+ </script>
+ </html>

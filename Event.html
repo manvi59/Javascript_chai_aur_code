@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('hii work hard')"> one click</button>
+    <br>
+    <button id="hey">hey</button>
+    
+</body>
+<script>
+    // document.getElementById('hey').onclick=()=>{
+    //     alert("me clicked")
+    // }
+
+    document.getElementById("hey").addEventListener('click' , function(e){
+        // we will get this event object inside the function
+        console.log(e) 
+        // PointerEvent {isTrusted: true, pointerId: 3, width: 1, height: 1, pressure: 0, …}
+
+        alert("hey I am using  addEventListener")
+    } , false)
+    // false is defalult
+
+    // attachEvent()
+    // Jquery --> onEvent Listner
+
+    //------------------studay 
+    // event tyoe ,temestamp ,defalutprevented 
+    // target , toElemnet , srcElement , current Target 
+    //  client X , clientY , ScreenX, screenY
+    // altKy , crlKey , shifyKey , keyCode 
+
+
+    //----------------------Event Progagation------------
+    // event Bubling -- false defalut   as a third parameter
+    // Event capautring--
+</script>
+</html>
