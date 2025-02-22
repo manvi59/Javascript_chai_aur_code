@@ -1,0 +1,79 @@
+  <!-- blocking code ---- (scrynonyze one by one )
+ non blocking code ---- (Asyncronyze  work like multi thread in between without waiting ) 
+
+ some time blocking code is reaquired to wait  like search user login data after user logeed in
+
+ sometime non blocking code is required in file operation .
+
+
+-------------------setTimeout an setInterval is a asyncronze way of coding which is not part of node js .. which is the part of browser Api , windwo object
+
+ setTimeOut run only onece  while setInterval run continuous untill we don't stop using stoInterval() 
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="good">
+        hii I am good person
+    </div>
+    <br>
+    <button id="stop">cleartimeout</button>   
+    
+    <br><br>
+    <!-- <div> -->
+        <div id="one">hii i love me</div>
+        <button id="two">hey clear Interval</button>
+    <!-- </div> -->
+
+    
+</body>
+<script>
+    const div=document.getElementById("good");
+
+
+  const divref=setTimeout(()=>{
+
+    console.log("I am Changing color , after two Second color will change it will run after 2 sec only once")
+    div.style.backgroundColor="pink";
+
+  },2000)
+
+  // when we want to stop the setTimout then we use cleartimeout
+  // this is work fine when we click before executing the setTimeout function
+  const stoping=document.getElementById("stop");
+
+  stoping.addEventListener("click" , ()=>{
+    console.log("hey I stoppped the setTimeout")
+    clearTimeout(divref)
+  })
+  
+   
+const one=document.getElementById("one");
+const intervalRef=setInterval((e)=>{
+one.style.backgroundColor="yellow";
+console.log("hiiiiii")
+one.style.color="pink";
+one.style.fontSize="30px",
+one.style.fontWeight="500"
+// console.log("I am running one div")
+},3000)
+
+const two =document.getElementById("two")
+
+two.addEventListener("click" , ()=>{
+    clearInterval(intervalRef)
+})
+
+  
+
+</script>
+</html>
